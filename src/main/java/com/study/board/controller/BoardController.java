@@ -22,7 +22,7 @@ public class BoardController {
         return "boardWrite";
     }
 
-    @PostMapping("boardWrite")
+    @PostMapping("/boardWrite")
     public String boardWriteForm(Board board, Model model) {
         boardService.insert(board);
         return "redirect:/boardList";
@@ -59,7 +59,7 @@ public class BoardController {
     }
 
     @GetMapping("boardDelete")
-    public String boardDelete(int bno, Model model) {
+    public String boardDelete(int bno) {
         boardService.delete(bno);
         return "redirect:/boardList";
     }
